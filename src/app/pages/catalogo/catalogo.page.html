@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Catálogo</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="mytheme">
+
+  <div class="lottie-wrapper" style="background-color: #a10000;">
+      <lottie-player 
+        class="lottie-player" 
+        src="assets/animations/catalogo.json"
+        background="transparent"
+        speed="1"
+        loop autoplay>
+      </lottie-player>
+    </div><br>
+
+  <div class="grid">
+    <mat-card class="producto-card" *ngFor="let producto of productos">
+      <img mat-card-image [src]="producto.imagenUrl" alt="{{ producto.nombre }}" />
+      <mat-card-content>
+        <h2>{{ producto.nombre }}</h2>
+        <p class="precio">$ {{ producto.precio | number:'1.0-0' }} CLP</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary">Ver más</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</ion-content>

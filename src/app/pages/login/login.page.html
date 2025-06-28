@@ -1,0 +1,61 @@
+<ion-header [translucent]="true" color="mytheme">
+  <ion-toolbar>
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="mytheme">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Iniciar sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="lottie-wrapper">
+      <lottie-player class="lottie-player" 
+      src="../../../assets/animations/login-animation.json"
+      background="transparent"
+      speed="1"
+      time="1"
+      loop autoplay
+      >
+    </lottie-player>
+  </div>
+
+
+
+  <mat-card>
+    <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Iniciar sesión</mat-card-title>
+      <mat-card-subtitle>Login</mat-card-subtitle>
+  </mat-card-header>
+    <mat-card-content>
+      <div>
+    <form class="login-form">
+      <mat-form-field class="login-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="example@gmail.com" value="example@gmail.com" type="email">
+      </mat-form-field>
+
+       <mat-form-field class="login-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="password" value="Password" type="password">
+      </mat-form-field>
+<!--
+      <mat-form-field class="login-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+      -->
+
+      
+        <ion-button expand="block" class="login-button" color="primary" (click)="btnLogin()">Iniciar</ion-button>
+
+      
+    </form>
+  </div>
+    </mat-card-content>
+  </mat-card>
+</ion-content>

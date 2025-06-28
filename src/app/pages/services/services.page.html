@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Servicios</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="mytheme">
+
+  <div class="lottie-wrapper" style="background-color: #a10000;">
+      <lottie-player 
+        class="lottie-player" 
+        src="assets/animations/catalogo.json"
+        background="transparent"
+        speed="1"
+        loop autoplay>
+      </lottie-player>
+    </div><br>
+
+  <div *ngFor="let servicio of servicios" class="servicio-card">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-icon mat-card-avatar color="primary">{{ servicio.icono }}</mat-icon>
+        <mat-card-title>{{ servicio.titulo }}</mat-card-title>
+        <mat-card-subtitle>$ {{ servicio.precio | number:'1.0-0' }} CLP</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ servicio.descripcion }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</ion-content>

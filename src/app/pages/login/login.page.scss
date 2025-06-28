@@ -1,0 +1,26 @@
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-full-width {
+  width: 100%;
+}
+
+
+example-label {
+  font-size: 14px;
+  margin: 0 16px 0 8px;
+  min-width: 120px;
+}
+
+
+.custom-loading .loading-backdrop {
+    background: #000 !important;
+    opacity: 1 !important;
+}
+
+.custom-loading .custom-spinner {
+    background: #fff !important;
+}

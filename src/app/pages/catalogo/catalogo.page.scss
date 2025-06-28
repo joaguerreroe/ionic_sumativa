@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.producto-card {
+  img {
+    height: 140px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .precio {
+    font-weight: bold;
+    color: #2e7d32;
+  }
+
+  mat-card-actions {
+    justify-content: flex-end;
+  }
+}

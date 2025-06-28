@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="mytheme">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding">
+
+    <!-- Lottie Animation -->
+    <div class="lottie-wrapper">
+      <lottie-player 
+        class="lottie-player" 
+        src="assets/animations/login-animation.json"
+        background="transparent"
+        speed="1"
+        loop autoplay>
+      </lottie-player>
+    </div>
+
+    <!-- Angular Material Card -->
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Repuestos Shop</mat-card-title>
+        <mat-card-subtitle>Automóviles</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://plus.unsplash.com/premium_photo-1658526934242-aa541776ca49?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Mantén tu automóvil en óptimas condiciones con nuestro servicio de chequeo general. Revisamos los puntos clave de tu vehículo —desde el nivel de aceite hasta el estado de frenos y neumáticos— para que tengas un informe claro y actualizado de su estado.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Ver más</button>
+       
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Catálogo de Productos -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Ofertas</mat-card-title>
+        <mat-card-subtitle>Automóviles</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <ion-list>
+          <ion-item *ngFor="let producto of productos">
+            <ion-avatar slot="start">
+              <img [src]="producto.imagenUrl" alt="Imagen de {{producto.nombre}}" />
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ producto.nombre }}</h2>
+              <p>${{ producto.precio | number }}</p>
+            </ion-label>
+            <ion-item>
+              <ion-button>Ver más</ion-button>
+            </ion-item>
+          </ion-item>
+        </ion-list>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</ion-content>
