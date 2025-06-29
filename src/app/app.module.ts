@@ -9,6 +9,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 // 👇 Solo importa el componente si se usa en AppComponent
 import { ToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
 import { MaterialModule } from './shared/material/material.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,7 @@ import { MaterialModule } from './shared/material/material.module';
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     MaterialModule,
     ToggleMenuComponent // ✅ standalone component se importa aquí
   ],

@@ -9,16 +9,19 @@
 
 <ion-content class="ion-padding" color="mytheme">
 
-  <div class="lottie-wrapper" style="background-color: #a10000;">
-      <lottie-player 
-        class="lottie-player" 
-        src="assets/animations/catalogo.json"
-        background="transparent"
-        speed="1"
-        loop autoplay>
-      </lottie-player>
-    </div><br>
+  <!-- Animación -->
+  <div class="lottie-wrapper" style="background-color: #a10000; border-radius: 8px; margin-bottom: 1rem;">
+    <lottie-player 
+      class="lottie-player" 
+      src="assets/animations/catalogo.json"
+      background="transparent"
+      speed="1"
+      loop autoplay>
+    </lottie-player>
+  </div>
 
+  <!-- Productos locales -->
+  <h2 class="seccion-titulo">Productos destacados</h2>
   <div class="grid">
     <mat-card class="producto-card" *ngFor="let producto of productos">
       <img mat-card-image [src]="producto.imagenUrl" alt="{{ producto.nombre }}" />
@@ -30,6 +33,23 @@
         <button mat-button color="primary">Ver más</button>
       </mat-card-actions>
     </mat-card>
+  </div>
+
+  <!-- Productos de la API -->
+  <h2 class="seccion-titulo">Ofertas online (API)</h2>
+  <div class="grid">
+    <mat-card class="producto-card" *ngFor="let prod of productosApi">
+      <img mat-card-image [src]="prod.image" alt="{{ prod.title }}" />
+      <mat-card-content>
+        <h2 style="color:#a10000">{{ prod.title }}</h2>
+        <p class="precio">{{ prod.price | currency:'USD' }}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary">Ver más</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <ion-spinner *ngIf="productosApi.length === 0" name="crescent" class="spinner-center"></ion-spinner>
   </div>
 
 </ion-content>

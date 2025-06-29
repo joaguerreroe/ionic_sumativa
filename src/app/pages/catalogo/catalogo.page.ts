@@ -1,5 +1,5 @@
 import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { FakeStoreService,Producto } from 'src/app/services/fake-store.service';
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.page.html',
@@ -7,6 +7,8 @@ import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   standalone: false,
 })
 export class CatalogoPage implements OnInit {
+
+  productosApi: Producto[] = [];
 
   productos = [
     {
@@ -36,9 +38,12 @@ export class CatalogoPage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private fakeStore: FakeStoreService) { }
 
   ngOnInit() {
+     this.fakeStore.getAllProducts().subscribe(data => {
+    this.productosApi = data;
+    });
   }
 
 }
