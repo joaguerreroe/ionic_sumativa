@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar Repuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="repuestoForm" (ngSubmit)="guardar()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre *</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input formControlName="descripcion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Precio *</ion-label>
+        <ion-input type="number" formControlName="precio"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Stock *</ion-label>
+        <ion-input type="number" formControlName="stock"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Categoría</ion-label>
+        <ion-input formControlName="categoria"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Marca</ion-label>
+        <ion-input formControlName="marca"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Vehículo Compatible</ion-label>
+        <ion-input formControlName="vehiculoCompatible"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-button expand="block" (click)="tomarFoto()">📷 Tomar Foto</ion-button>
+        <ion-button expand="block" (click)="seleccionarImagen()">🖼️ Elegir Imagen</ion-button>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="vistadefoto">
+          <img [src]="vistadefoto" alt="Vista previa" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+        </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="block" type="submit" [disabled]="repuestoForm.invalid">
+      Guardar
+    </ion-button>
+  </form>
+</ion-content>

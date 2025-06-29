@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    //canActivate: [authGuard] // aquí usas tu guard
   },
   {
     path: '',
@@ -27,6 +29,20 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./pages/faq/faq.module').then( m => m.FaqPageModule)
   },
+  
+  {
+    path: 'repuesto-listar',
+    loadChildren: () => import('./pages/repuesto-listar/repuesto-listar.module').then( m => m.RepuestoListarPageModule)
+  },
+  {
+    path: 'repuesto-crear',
+    loadChildren: () => import('./pages/repuesto-crear/repuesto-crear.module').then( m => m.RepuestoCrearPageModule)
+  },
+   {
+    path: '**', // 🚨 RUTA COMODÍN
+    redirectTo: 'home'
+  },
+ 
 ];
 
 @NgModule({

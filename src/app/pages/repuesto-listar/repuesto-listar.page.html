@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Repuestos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/repuesto-crear">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="repuestos.length > 0; else noRepuestos">
+    <ion-item *ngFor="let repuesto of repuestos">
+      <ion-label>
+        <h2>{{ repuesto.nombre }}</h2>
+        <p>{{ repuesto.descripcion }}</p>
+        <p>Precio: {{ repuesto.precio | currency }}</p>
+        <p>Stock: {{ repuesto.stock }}</p>
+      </ion-label>
+
+      <ion-button color="primary" slot="end" (click)="editarRepuesto(repuesto)">
+        Editar
+      </ion-button>
+      <ion-button color="danger" slot="end" (click)="confirmarEliminar(repuesto.id)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noRepuestos>
+    <ion-text color="medium" class="ion-text-center">
+      <p>No hay repuestos registrados.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

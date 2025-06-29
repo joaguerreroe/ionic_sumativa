@@ -35,13 +35,13 @@
       <div>
     <form class="login-form">
       <mat-form-field class="login-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="example@gmail.com" value="example@gmail.com" type="email">
+        <mat-label>Usuario</mat-label>
+        <input matInput placeholder="example@gmail.com" value="example@gmail.com" [(ngModel)]="email">
       </mat-form-field>
 
        <mat-form-field class="login-full-width">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="password" value="Password" type="password">
+        <input matInput placeholder="password" value="Password" type="password" [(ngModel)]="password">
       </mat-form-field>
 <!--
       <mat-form-field class="login-full-width">
@@ -51,7 +51,7 @@
       -->
 
       
-        <ion-button expand="block" class="login-button" color="primary" (click)="btnLogin()">Iniciar</ion-button>
+        <ion-button expand="block" class="login-button" color="primary" (click)="onLogin()">Iniciar</ion-button>
 
       
     </form>
