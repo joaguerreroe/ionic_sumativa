@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,20 @@ export class HomePage {
     },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+
+
+
+  redServicios(){
+    console.log("presionaste catalogo en home")
+    this.router.navigate(['/services']);
+  }
+
+  redCatalogo(){
+    console.log("presionaste catalogo en home")
+    this.router.navigate(['/catalogo']);
+  }
+
 
 }

@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  email: string = '';
+  username: string = '';
   password: string = '';
 
   constructor(
@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
   await loading.present();
 
   try {
-    const user = await this.userService.login(this.email, this.password);
+    const user = await this.userService.login(this.username, this.password);
     await loading.dismiss();
 
     if (user) {
@@ -63,17 +63,17 @@ export class LoginPage implements OnInit {
 
 async crearUsuarioDePrueba() {
   try {
-    const user = await this.userService.login('cristobal', '1234');
+    const user = await this.userService.login('user_prueba', 'test123');
     if (!user) {
       await this.userService.register({
-        username: 'cristobal',
-        password: '1234',
-        nombre: 'Cristóbal Vera'
+        username: 'user_prueba',
+        password: 'test123',
+        nombre: 'Juan Perez'
       });
 
       const toast = await this.toastCtrl.create({
-        message: 'Usuario de prueba creado: cristobal / 1234',
-        duration: 3000,
+        message: 'Usuario de prueba creado: user_prueba / test123',
+        duration: 7000,
         color: 'success'
       });
       toast.present();

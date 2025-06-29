@@ -54,6 +54,8 @@ export class RepuestoCrearPage implements OnInit {
   const foto: Photo = await this.serviciocamara.capturarFoto();
   this.vistadefoto = foto.dataUrl;
   this.selectedImageBase64 = foto.dataUrl || '';
+  // Esta línea asegura que se guarda en el formulario
+  this.repuestoForm.patchValue({ imagen: foto.dataUrl });
 }
 
 async seleccionarImagen(): Promise<void> {

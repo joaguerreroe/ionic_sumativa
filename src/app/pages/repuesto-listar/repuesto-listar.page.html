@@ -1,36 +1,57 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Lista de Repuestos</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/repuesto-crear">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
-      </ion-button>
+    <ion-title>Lista de repuestos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list *ngIf="repuestos.length > 0; else noRepuestos">
-    <ion-item *ngFor="let repuesto of repuestos">
-      <ion-label>
-        <h2>{{ repuesto.nombre }}</h2>
-        <p>{{ repuesto.descripcion }}</p>
-        <p>Precio: {{ repuesto.precio | currency }}</p>
-        <p>Stock: {{ repuesto.stock }}</p>
-      </ion-label>
+<ion-content class="ion-padding" color="mytheme">
 
-      <ion-button color="primary" slot="end" (click)="editarRepuesto(repuesto)">
-        Editar
-      </ion-button>
-      <ion-button color="danger" slot="end" (click)="confirmarEliminar(repuesto.id)">
-        Eliminar
-      </ion-button>
-    </ion-item>
-  </ion-list>
+  <!-- Lottie Animation -->
+  <div class="lottie-wrapper">
+    <lottie-player 
+      class="lottie-player" 
+      src="assets/animations/login-animation.json"
+      background="transparent"
+      speed="1"
+      loop autoplay>
+    </lottie-player>
+  </div>
+
+  <mat-card>
+    <mat-card-content>
+      <ion-list *ngIf="repuestos.length > 0; else noRepuestos">
+        <ion-item *ngFor="let repuesto of repuestos" lines="full">
+          
+          <!-- Imagen con estilo -->
+          <ion-thumbnail slot="start" *ngIf="repuesto.imagen">
+            <img [src]="repuesto.imagen" alt="Repuesto" />
+          </ion-thumbnail>
+
+          <ion-label class="ion-text-wrap">
+            <h2>{{ repuesto.nombre }}</h2>
+            <p>{{ repuesto.descripcion }}</p>
+            <p>Precio: {{ repuesto.precio | currency }}</p>
+            <p>Stock: {{ repuesto.stock }}</p>
+          </ion-label>
+
+          <ion-button color="primary" slot="end" (click)="editarRepuesto(repuesto)">
+            Editar
+          </ion-button>
+          <ion-button color="danger" slot="end" (click)="confirmarEliminar(repuesto.id)">
+            Eliminar
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </mat-card-content>
+  </mat-card>
 
   <ng-template #noRepuestos>
     <ion-text color="medium" class="ion-text-center">
       <p>No hay repuestos registrados.</p>
     </ion-text>
   </ng-template>
+
 </ion-content>

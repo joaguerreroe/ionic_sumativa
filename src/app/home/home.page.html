@@ -28,7 +28,7 @@
     </div>
 
     <!-- Angular Material Card -->
-    <mat-card class="example-card" appearance="outlined">
+    <mat-card class="example-card" appearance="outlined" style="background-color: #fffb0b;">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Repuestos Shop</mat-card-title>
@@ -41,13 +41,15 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>Ver más</button>
-       
-      </mat-card-actions>
-    </mat-card>
+  <button mat-raised-button (click)="redServicios()" class="btn-vermas">
+    Ver más
+  </button>
+</mat-card-actions>
+
+    </mat-card><br>
 
     <!-- Catálogo de Productos -->
-    <mat-card>
+    <mat-card style="background-color: #fffb0b">
       <mat-card-header>
         <mat-card-title>Ofertas</mat-card-title>
         <mat-card-subtitle>Automóviles</mat-card-subtitle>
@@ -63,7 +65,9 @@
               <p>${{ producto.precio | number }}</p>
             </ion-label>
             <ion-item>
-              <ion-button>Ver más</ion-button>
+              <button mat-raised-button (click)="redCatalogo()" class="btn-vermas">
+                Ver más
+              </button>
             </ion-item>
           </ion-item>
         </ion-list>

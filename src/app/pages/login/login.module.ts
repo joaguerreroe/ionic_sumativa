@@ -4,12 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
-import {MatButtonModule} from '@angular/material/button';
-import { LoginPage } from './login.page';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
 
+import { LoginPage } from './login.page';
+
+
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 
 @NgModule({
@@ -17,10 +16,7 @@ import {MatCardModule} from '@angular/material/card';
     CommonModule,
     FormsModule,
     IonicModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCardModule,
+    MaterialModule,
     LoginPageRoutingModule
   ],
   declarations: [LoginPage],

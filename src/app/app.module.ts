@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 // 👇 Solo importa el componente si se usa en AppComponent
 import { ToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
+import { MaterialModule } from './shared/material/material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { ToggleMenuComponent } from './components/toggle-menu/toggle-menu.compon
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
+    MaterialModule,
     ToggleMenuComponent // ✅ standalone component se importa aquí
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite],

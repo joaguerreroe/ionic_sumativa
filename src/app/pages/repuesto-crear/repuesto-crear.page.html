@@ -1,11 +1,25 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Registrar Repuesto</ion-title>
+    <ion-title>Registrar repuesto</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="repuestoForm" (ngSubmit)="guardar()">
+<ion-content class="ion-padding" color="mytheme">
+  <div class="lottie-wrapper" style="background-color: #a10000;">
+      <lottie-player 
+        class="lottie-player" 
+        src="assets/animations/catalogo.json"
+        background="transparent"
+        speed="1"
+        loop autoplay>
+      </lottie-player>
+    </div><br>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="repuestoForm" (ngSubmit)="guardar()">
     <ion-list>
       <ion-item>
         <ion-label position="floating">Nombre *</ion-label>
@@ -57,4 +71,6 @@
       Guardar
     </ion-button>
   </form>
+    </mat-card-content>
+  </mat-card>
 </ion-content>

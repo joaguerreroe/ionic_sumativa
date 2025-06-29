@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ import { RepuestoListarPage } from './repuesto-listar.page';
     IonicModule,
     RepuestoListarPageRoutingModule
   ],
-  declarations: [RepuestoListarPage]
+  declarations: [RepuestoListarPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class RepuestoListarPageModule {}

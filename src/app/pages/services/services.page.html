@@ -20,7 +20,7 @@
     </div><br>
 
   <div *ngFor="let servicio of servicios" class="servicio-card">
-    <mat-card appearance="outlined">
+    <mat-card appearance="outlined" style="background-color: #fffb0b;">
       <mat-card-header>
         <mat-icon mat-card-avatar color="primary">{{ servicio.icono }}</mat-icon>
         <mat-card-title>{{ servicio.titulo }}</mat-card-title>
@@ -29,7 +29,7 @@
       <mat-card-content>
         <p>{{ servicio.descripcion }}</p>
       </mat-card-content>
-    </mat-card>
+    </mat-card><br>
   </div>
 
 </ion-content>

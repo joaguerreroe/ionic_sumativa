@@ -8,30 +8,52 @@
     <ion-list>
 
       <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/home" routerDirection="root">Inicio</ion-item>
+        <ion-item routerLink="/home" routerDirection="root">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          Inicio
+        </ion-item>
       </ion-menu-toggle>
 
       <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/login" routerDirection="root">Iniciar sesión</ion-item>
-      </ion-menu-toggle>
-
-       <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/repuesto-crear" routerDirection="root">Registrar repuestos</ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/repuesto-listar" routerDirection="root">lista repuestos</ion-item>
+        <ion-item routerLink="/login" routerDirection="root">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Iniciar sesión
+        </ion-item>
       </ion-menu-toggle>
 
       <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/catalogo">Catálogo</ion-item>
+        <ion-item routerLink="/repuesto-crear" routerDirection="root">
+          <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+          Registrar repuestos
+        </ion-item>
       </ion-menu-toggle>
 
       <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/services">Servicios</ion-item>
+        <ion-item routerLink="/repuesto-listar" routerDirection="root">
+          <ion-icon slot="start" name="list-outline"></ion-icon>
+          Lista repuestos
+        </ion-item>
       </ion-menu-toggle>
 
       <ion-menu-toggle auto-hide="true">
-        <ion-item routerLink="/faq">Preguntas frecuentes</ion-item>
+        <ion-item routerLink="/catalogo">
+          <ion-icon slot="start" name="book-outline"></ion-icon>
+          Oferta semanal
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/services">
+          <ion-icon slot="start" name="construct-outline"></ion-icon>
+          Servicios
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/faq">
+          <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+          Preguntas frecuentes
+        </ion-item>
       </ion-menu-toggle>
 
     </ion-list>
