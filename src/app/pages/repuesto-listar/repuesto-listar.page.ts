@@ -52,10 +52,5 @@ export class RepuestoListarPage implements OnInit, OnDestroy {
     await alert.present();
   }
 
-  editarRepuesto(repuesto: Repuesto) {
-    // Aquí puedes navegar a una página de edición que armes,
-    // pasando el repuesto o su id como parámetro.
-    // Por ahora solo un alert:
-    alert(`Editar repuesto ${repuesto.nombre} - Implementar página de edición`);
-  }
+ 
 }

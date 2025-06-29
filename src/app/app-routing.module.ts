@@ -41,8 +41,12 @@ const routes: Routes = [
     path: 'repuesto-crear',
     loadChildren: () => import('./pages/repuesto-crear/repuesto-crear.module').then( m => m.RepuestoCrearPageModule),
     canActivate: [authGuard]
+  },   
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
-   {
+  {
     path: '**', // 🚨 RUTA COMODÍN
     redirectTo: 'home'
   },

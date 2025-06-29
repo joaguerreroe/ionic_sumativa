@@ -85,7 +85,7 @@ async crearUsuarioDePrueba() {
 
 
 redRegister(){
-    console.log("presionaste catalogo en home")
+    
     this.router.navigate(['/register']);
   }
 
